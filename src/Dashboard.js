@@ -1,33 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+ import React, {Component} from 'react';
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-      <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+import Parse from 'parse';
 
-    <title>React App</title>
-  </head>
-  <body>
-    <script>
 
-    window.onload = function() {
+export default class DashBoard extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            emailSend: "",
+            emailMessage: "",
+            phoneNumberMessage: "",
+            phoneNumber: ""
+        }
+    }
+
+    componentDidMount = () => {
+
+      window.onload = function() {
         zingchart.render({
           id: 'chart3',
           height: '100%',
@@ -599,23 +589,63 @@
           });
         }, 500);
         }
-    </script>
 
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
+    }
 
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    render() {
 
-  </body>
-</html>
+
+        return (
+            <div className="dashboardWrapper">
+                <div className='dashboard'>
+
+                <div className='column'>
+
+                  <div id="chart1" className='item'></div>
+                  <div id="chart2" className='item'></div>
+                  <div id="chart3" className='item'></div>
+
+                </div>
+
+                <div className='column'>
+
+                  <div id="chart4" className='item'></div>
+
+                </div>
+
+              </div>
+
+              <div className='dashboard'>
+
+                <div className='column'>
+
+                  <div id="chart5" className='item'></div>
+
+                </div>
+
+                <div id="br">
+
+                  <section>
+
+                    <div id="chart6" className='small item'>
+
+                    </div>
+                    <div id="chart7" className='small item'></div>
+
+                  </section>
+
+                  <div className='column'>
+
+                    <div id="chart8" className='item'></div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+        )
+    }
+}

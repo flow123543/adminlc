@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
-import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
 // import { Chart } from 'react-google-charts';
 
 
-export default class Support extends Component {
+export default class Settings extends Component {
   constructor() {
     super()
     this.state = {

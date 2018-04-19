@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Parse from 'parse';
 
+import invites from "./invites.css"
+
 
 export default class Invites extends Component {
     constructor() {
@@ -110,114 +112,113 @@ export default class Invites extends Component {
 
     render() {
         return (
-            <div className="dashboardWrapper">
+            <div className="dashboard">
 
-                    <ul className="cards">
-                      <li className="cards__item">
-                        <div className="card">
-                          <div className="card__image card__image--fence"></div>
-                          <div className="card__content">
-                                 <p className="title">Invite Users By Emails (50 max)</p>
+
+                          <div className='column'>
+
+                            <div className='item2'>
+
+                             <p className="title">Invite Users By Emails (50 max)</p>
                             <div className="inputContainer">
-                            <input value={this.state.emailSend}
+                                <input value={this.state.emailSend}
                                    onChange={(e) => this.setState({"emailSend":e.target.value})}
                                    type="text"
                                    placeholder="Seperate emails with a comma" />
-                            <textarea value={this.state.emailMessage}
+                                <textarea value={this.state.emailMessage}
                                       onChange={(e) => this.setState({"emailMessage":e.target.value})}
                                       rows="4"
                                       placeholder="Custom Message (if kept empty, default message will show)"></textarea>
                             <br style={{"clear":"both"}} />
-                        </div>
+                            </div>
                         {this.state.emailSend !== "" ?
                             <a onClick={this.handleEmailSend} className="pull-right settingsBttn greenBttn">Send Emails</a>
                             :
                             ""
                         }
                         <br style={{"clear":"both"}} />
-                          </div>
-                        </div>
-                      </li>
 
-                      <li className="cards__item">
-                        <div className="card">
-                          <div className="card__image card__image--river"></div>
-                          <div className="card__content">
-                                  <p className="title">Invite/message analytics</p>
-                        <div className="inputContainer">
-                            <input value={this.state.phoneNumber}
-                                   onChange={(e) => this.setState({"phoneNumber":e.target.value})}
+
+
+                            </div>
+
+                            <div className='item2'>
+ <p className="title">Invite Users By Emails (50 max)</p>
+                            <div className="inputContainer">
+                                <input value={this.state.emailSend}
+                                   onChange={(e) => this.setState({"emailSend":e.target.value})}
                                    type="text"
-                                   placeholder="Phone Number" />
-                            <textarea value={this.state.phoneNumberMessage}
-                                      onChange={(e) => this.setState({"phoneNumberMessage":e.target.value})}
+                                   placeholder="Seperate emails with a comma" />
+                                <textarea value={this.state.emailMessage}
+                                      onChange={(e) => this.setState({"emailMessage":e.target.value})}
                                       rows="4"
                                       placeholder="Custom Message (if kept empty, default message will show)"></textarea>
                             <br style={{"clear":"both"}} />
-                        </div>
-                        {this.state.phoneNumber !== "" ?
-                            <a onClick={this.handlePhoneSend} className="pull-right settingsBttn greenBttn">Send to Phone</a>
+                            </div>
+                        {this.state.emailSend !== "" ?
+                            <a onClick={this.handleEmailSend} className="pull-right settingsBttn greenBttn">Send Emails</a>
                             :
                             ""
                         }
                         <br style={{"clear":"both"}} />
-                          </div>
-                        </div>
-                      </li>
 
-                      <li className="cards__item">
-                        <div className="card">
-                          <div className="card__image card__image--record"></div>
-                          <div className="card__content">
-                          <p className="title">Invite Users By Phone (1 max)</p>
-                        <div className="inputContainer">
-                            <input value={this.state.phoneNumber}
-                                   onChange={(e) => this.setState({"phoneNumber":e.target.value})}
+
+
+                            </div>
+
+                         </div>
+
+                        <div className='column'>
+
+                            <div className='item2'>
+                            <p className="title">Invite/message analytics</p>
+                            <div className="inputContainer">
+                                <input value={this.state.emailSend}
+                                   onChange={(e) => this.setState({"emailSend":e.target.value})}
                                    type="text"
-                                   placeholder="Phone Number" />
-                            <textarea value={this.state.phoneNumberMessage}
-                                      onChange={(e) => this.setState({"phoneNumberMessage":e.target.value})}
+                                   placeholder="Seperate emails with a comma" />
+                                <textarea value={this.state.emailMessage}
+                                      onChange={(e) => this.setState({"emailMessage":e.target.value})}
                                       rows="4"
                                       placeholder="Custom Message (if kept empty, default message will show)"></textarea>
                             <br style={{"clear":"both"}} />
-                        </div>
-                        {this.state.phoneNumber !== "" ?
-                            <a onClick={this.handlePhoneSend} className="pull-right settingsBttn greenBttn">Send to Phone</a>
+                            </div>
+                        {this.state.emailSend !== "" ?
+                            <a onClick={this.handleEmailSend} className="pull-right settingsBttn greenBttn">Send Emails</a>
                             :
                             ""
                         }
                         <br style={{"clear":"both"}} />
-                          </div>
-                        </div>
-                      </li>
 
-                      <li className="cards__item">
-                        <div className="card">
-                          <div className="card__image card__image--flowers"></div>
-                          <div className="card__content">
-                          <p className="title">Email templates</p>
-                        <div className="inputContainer">
-                            <input value={this.state.phoneNumber}
-                                   onChange={(e) => this.setState({"phoneNumber":e.target.value})}
+
+
+                            </div>
+
+                            <div className='item2'>
+
+ <p className="title">Email templates</p>
+                            <div className="inputContainer">
+                                <input value={this.state.emailSend}
+                                   onChange={(e) => this.setState({"emailSend":e.target.value})}
                                    type="text"
-                                   placeholder="Phone Number" />
-                            <textarea value={this.state.phoneNumberMessage}
-                                      onChange={(e) => this.setState({"phoneNumberMessage":e.target.value})}
+                                   placeholder="Seperate emails with a comma" />
+                                <textarea value={this.state.emailMessage}
+                                      onChange={(e) => this.setState({"emailMessage":e.target.value})}
                                       rows="4"
                                       placeholder="Custom Message (if kept empty, default message will show)"></textarea>
                             <br style={{"clear":"both"}} />
-                        </div>
-                        {this.state.phoneNumber !== "" ?
-                            <a onClick={this.handlePhoneSend} className="pull-right settingsBttn greenBttn">Send to Phone</a>
+                            </div>
+                        {this.state.emailSend !== "" ?
+                            <a onClick={this.handleEmailSend} className="pull-right settingsBttn greenBttn">Send Emails</a>
                             :
                             ""
                         }
                         <br style={{"clear":"both"}} />
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
 
+
+                            </div>
+
+                        </div>
             </div>
         )
     }

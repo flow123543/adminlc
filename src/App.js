@@ -7,6 +7,7 @@ import Verifications from './Verifications.js'
 import Invites from './Invites.js'
 import Support from './Support.js'
 import Dashboard from './Dashboard.js'
+import Settings from './Settings.js'
 
 import Parse from 'parse';
 
@@ -27,6 +28,8 @@ export default class App extends Component {
                     <Route path="/verifications" component={Verifications} />
                     <Route path="/support" component={Support} />
                     <Route path="/dashboard" component={Dashboard} />
+                    <Route path="/settings" component={Settings} />
+
                 </div>
           </div>
         )

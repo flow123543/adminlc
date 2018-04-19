@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
+// import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
 // import { Chart } from 'react-google-charts';
-
+import zingchart from 'zingchart'
 
 export default class Support extends Component {
   constructor() {
@@ -17,6 +17,38 @@ export default class Support extends Component {
   }
 
 
+  componentDidMount() {
+    zingchart.render({
+          id : 'chart9',
+          data : {
+            type: "area",
+            title: {
+              text: 'Number of Inquiries',
+              color: 'navy'
+            },
+              plot:{
+                activeArea:true /* extend the tooltip's active area to the shaded region */
+              },
+               scaleX: {
+              item: {
+                fontColor: "blue",
+              },
+
+              labels: ["mon", "tues", "wed", "thurs", "fri", "sat", "sun"]
+            },
+              series: [
+                {
+                  values:[20,40,25,50,15,45,33],
+                  backgroundColor:"#6666FF #FF0066", /* Accepts single color or gradient (2 colors) */
+                  alphaArea:0.5,/* Transparency of shaded region*/
+                }
+              ]
+
+              },
+              height: "100%",
+              width: "100%"
+            });
+  }
   // handleKeyPress = (e) => {
 
   //       if (e.key === "Enter")
@@ -53,6 +85,8 @@ export default class Support extends Component {
   //   }
   render() {
 
+
+
     return (
           <div className="dashboardWrapper">
             <div className='dashboard'>
@@ -60,7 +94,7 @@ export default class Support extends Component {
                 <div className='column'>
 
                     <div className='item'>
-                        <div className="support" style={{'display': 'grid'}}>
+                        <div className="support" style={{'display': 'grid', margin: '36%'}}>
                         <button>FAQ</button>
                         <button>knowledgebase</button>
                         <button>All inquiries</button>

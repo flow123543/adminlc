@@ -1,5 +1,5 @@
- import React, {Component} from 'react';
-
+import React, {Component} from 'react';
+import zingchart from 'zingchart'
 import Parse from 'parse';
 
 
@@ -15,10 +15,9 @@ export default class DashBoard extends Component {
         }
     }
 
-    componentDidMount = () => {
+  componentDidMount = () => {
 
-      window.onload = function() {
-        zingchart.render({
+      zingchart.render({
           id: 'chart3',
           height: '100%',
           width: '100%',
@@ -398,7 +397,7 @@ export default class DashBoard extends Component {
               text: "activity",
               x: "5%",
               y: "2%",
-              fontSize: "50px",
+              fontSize: "20px",
               fontColor: "blue"
             }],
             plot: {
@@ -440,13 +439,13 @@ export default class DashBoard extends Component {
               marker: {
                 visible: true
               },
-              lineWidth: "1px"
+              lineWidth: "3px"
             },
             scaleX: {
-              visible: false
+              visible: true
             },
             scaleY: {
-              visible: false
+              visible: true
             },
             plotarea: {
               margin: "70 0 0 0"
@@ -455,13 +454,13 @@ export default class DashBoard extends Component {
               text: "Today",
               x: "5%",
               y: "2%",
-              fontSize: "24px",
+              fontSize: "20px",
               fontColor: "skyblue"
             }, {
-              text: "last month",
-              x: "70%",
+              text: "week",
+              x: "80%",
               y: "2%",
-              fontSize: "24px",
+              fontSize: "20px",
               fontColor: "navy"
             }],
             series: [{
@@ -541,38 +540,8 @@ export default class DashBoard extends Component {
 
 
 
-        zingchart.render({
-          id : 'chart9',
-          data : {
-            type: "area",
-            title: {
-              text: 'Number of Inquiries',
-              color: 'navy'
-            },
-              plot:{
-                activeArea:true /* extend the tooltip's active area to the shaded region */
-              },
-               scaleX: {
-              item: {
-                fontColor: "blue",
-              },
 
-              labels: ["mon", "tues", "wed", "thurs", "fri", "sat", "sun"]
-            },
-              series: [
-                {
-                  values:[20,40,25,50,15,45,33],
-                  backgroundColor:"#6666FF #FF0066", /* Accepts single color or gradient (2 colors) */
-                  alphaArea:0.5,/* Transparency of shaded region*/
-                }
-              ]
-
-              },
-              height: "100%",
-              width: "100%"
-            });
-
-        function generateSeriesData(num) {
+         function generateSeriesData(num) {
           var values = [];
           var startDate = 1349617440000;
           for (var i = 0; i < num; i++) {
@@ -581,14 +550,13 @@ export default class DashBoard extends Component {
           return values;
         }
 
-        // make data appear to be moving
-        setInterval(function() {
-          zingchart.exec('chart6', 'setseriesvalues', {
-            plotindex: 0,
-            values: generateSeriesData(150)
-          });
-        }, 500);
-        }
+        // // make data appear to be moving
+        // setInterval(function() {
+        //   zingchart.exec('chart6', 'setseriesvalues', {
+        //     plotindex: 0,
+        //     values: generateSeriesData(150)
+        //   });
+        // }, 500);
 
     }
 

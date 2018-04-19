@@ -1,0 +1,19 @@
+
+.item2 {
+  margin: 10px;
+  flex-grow: 1;
+  max-height: 600px;
+  max-width: 50%;
+  padding: 30px;
+  background-color: white;
+}
+
+input, textarea {
+  margin: 10px;
+}
+
+.greenBttn {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
